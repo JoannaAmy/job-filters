@@ -1,0 +1,251 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap");
+
+:root {
+  /* Colors */
+  /* Primary */
+
+  --Desaturated-Dark-Cyan: hsl(180, 29%, 50%);
+
+  /* Neutral */
+
+  --Light-Grayish-Cyan-Background: hsl(180, 52%, 96%);
+  --Light-Grayish-Cyan-FilterTablets: hsl(180, 31%, 95%);
+  --Dark-Grayish-Cyan: hsl(180, 8%, 52%);
+  --Very-Dark-Grayish-Cyan: hsl(180, 14%, 20%);
+
+  --shadow: 0 5px 20px 10px hsl(180, 29%, 50%, 0.2);
+}
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "League Spartan", sans-serif;
+}
+
+html {
+  font-size: 0.9375rem;
+}
+
+body {
+  min-height: 100dvh;
+  background-color: var(--Light-Grayish-Cyan-Background);
+}
+
+button {
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+
+.header {
+  background-image: url(./images/bg-header-mobile.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 10.3rem;
+}
+
+.filter-container {
+  position: relative;
+  background: white;
+  height: auto;
+  padding: 1rem;
+  bottom: 60px;
+  border-radius: 5px;
+  box-shadow: var(--shadow);
+  max-width: 1000px;
+  margin-inline: auto;
+  display: none;
+  justify-content: space-between;
+  gap: 1em;
+}
+
+.filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.tagBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  border: none;
+  background: var(--Light-Grayish-Cyan-FilterTablets);
+  padding-inline-start: 0.5em;
+  border-radius: 5px;
+  font-weight: 700;
+  color: var(--Desaturated-Dark-Cyan);
+}
+
+.tagBtn:hover {
+  background-color: var(--Desaturated-Dark-Cyan);
+  color: var(--Light-Grayish-Cyan-FilterTablets);
+}
+
+.clearTag {
+  border: none;
+  background-color: var(--Desaturated-Dark-Cyan);
+  padding: 0.5em;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.clearAll {
+  border: none;
+  align-self: center;
+  color: var(--Dark-Grayish-Cyan);
+  background: none;
+  border: none;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.main {
+  width: min(100% - 15%, 1100px);
+  margin-inline: auto;
+  padding-block: 2rem;
+}
+
+.jobCard {
+  flex-direction: column;
+  background-color: #fff;
+  padding-inline: 1rem;
+  margin-block-start: 1rem;
+  margin-block-end: 3.5rem;
+  padding-block: 1.5rem;
+  box-shadow: var(--shadow);
+  border-radius: 7px;
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.hidden {
+  transform: translateX(-100%);
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+}
+
+.featured {
+  border-left: 5px solid var(--Desaturated-Dark-Cyan);
+}
+
+.company-logo {
+  width: 18%;
+  object-fit: cover;
+  position: relative;
+  top: -45px;
+  left: 6px;
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-block-end: 1rem;
+}
+
+.heading h1 {
+  font-size: 1rem;
+  color: var(--Desaturated-Dark-Cyan);
+}
+
+.new-Job {
+  background-color: var(--Desaturated-Dark-Cyan);
+  padding: 0.3rem 0.4rem;
+  font-weight: 700;
+  border-radius: 0.7rem;
+  color: #fff;
+  margin-inline-end: 0.5rem;
+  display: inline-block;
+}
+
+.featured-Job {
+  background-color: var(--Very-Dark-Grayish-Cyan);
+  color: var(--Light-Grayish-Cyan-FilterTablets);
+  padding: 0.3rem 0.4rem;
+  border-radius: 0.7rem;
+  display: inline-block;
+}
+
+.jobPosition {
+  font-weight: 700;
+  margin-block-end: 1rem;
+}
+
+.availability {
+  display: flex;
+  color: var(--Dark-Grayish-Cyan);
+  margin-block-end: 1.4rem;
+}
+
+.availability li {
+  margin-inline-end: 1.5rem;
+  font-weight: 500;
+}
+
+.availability li:first-child {
+  list-style: none;
+}
+
+hr {
+  margin-block-end: 1rem;
+  opacity: 0.5;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.4rem;
+}
+
+.tags button {
+  border: none;
+  background: var(--Light-Grayish-Cyan-FilterTablets);
+  padding: 0.8em;
+  border-radius: 5px;
+  font-weight: 700;
+  color: var(--Desaturated-Dark-Cyan);
+}
+
+.tags button:hover {
+  color: var(--Light-Grayish-Cyan-FilterTablets);
+  background-color: var(--Desaturated-Dark-Cyan);
+}
+
+@media (min-width: 700px) {
+  .header {
+    background-image: url(./images/bg-header-desktop.svg);
+  }
+
+  .heading-container {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .company-logo {
+    position: initial;
+    width: auto;
+    display: block;
+  }
+}
+
+@media (min-width: 1000px) {
+  .jobCard {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  hr {
+    display: none;
+  }
+
+  .tags {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+}
